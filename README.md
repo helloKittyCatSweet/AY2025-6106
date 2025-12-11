@@ -2,6 +2,10 @@
 
 A Flask-based web application integrated with Solidity smart contracts for managing deposits and money transfers. This DApp simulates a payment system similar to WeChat Pay (Weixin).
 
+## Live Demo
+
+**Access the live application:** https://ay2025-6106-2u0j.onrender.com/
+
 ## Features
 
 - **User Management**: Register and log users with timestamp tracking
