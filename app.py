@@ -25,13 +25,9 @@ def main():
         timestamp = datetime.datetime.now()
         conn = sqlite3.connect("user.db")
         c = conn.cursor()
-        c.execute("""
-        WITH count_check AS (
-            SELECT COUNT(*) as cnt FROM user
-        )
-        DELETE FROM user WHERE (SELECT cnt FROM count_check) > 0;
-        INSERT INTO user (name, timestamp) VALUES (?,?);
-    """, (name, timestamp))
+        c.execute("DELETE FROM user")
+        c.execute("INSERT INTO user (name, timestamp) VALUES (?,?)", 
+                 (name, timestamp))
         conn.commit()
         c.close()
         conn.close()
